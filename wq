@@ -1,0 +1,21 @@
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch scssAdd
+# Changes to be committed:
+#	new file:   .vscode/settings.json
+#	new file:   styles/sass/_body.scss
+#	new file:   styles/sass/_footer.scss
+#	new file:   styles/sass/_global.scss
+#	new file:   styles/sass/_header.scss
+#	new file:   styles/sass/_hoverFocus.scss
+#	new file:   styles/sass/_itemConfig.scss
+#	new file:   styles/sass/_mediaQueries.scss
+#	new file:   styles/sass/_nav.scss
+#	new file:   styles/sass/_setup.scss
+#	new file:   styles/sass/_tempstyle.scss
+#	new file:   styles/sass/_variableMixins.scss
+#	new file:   styles/sass/style.scss
+#	new file:   styles/style.css
+#
