@@ -246,3 +246,47 @@ html {
   white-space: nowrap;
   /* added line */
 }
+
+html {
+  font-size: 62.5%;
+}
+
+.bleed {
+  max-width: 1400px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+* {
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.articleSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+article {
+  border: 1px solid black;
+}

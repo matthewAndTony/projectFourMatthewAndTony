@@ -1,22 +1,35 @@
 const stockApp = {};
-let apiKey = `I57N7ZBNDACAALUE`;
+stockApp.apiKey = `I57N7ZBNDACAALUE`;
 
-stockApp.init = function(ticker,interval,timeSeries){
+
+stockApp.getTicker = function(ticker){
+    ticker.preventDefault();
+    console.log($(this).text().toUpperCase());
+};
+$('.tickerSearch').on('select', getTicker(ticker));
+
+// stockApp.getInterval();
+// stockApp.getTimeSeries();
+
+stockApp.init = function(ticker,interval,timeSeries,fromCurrency,){
     $.ajax({
-        url:`https://www.alphavantage.co/`,
+        url:`https://www.alphavantage.co/query`,
         method:`GET`,
         dataType:`json`,
         data:{
-            apiKey: apiKey,
-            timeSeries: `function=${timeSeries}`,
-            symbol: ticker,
-            interval: `TIME_SERIES_${interval.toUpperCase()}`
+            interval: interval,
+            function: `TIME_SERIES_${timeSeries.toUpperCase()}`,
+            symbol: ticker.toUpperCase(),
+            apikey: stockApp.apiKey,
+            from_currency:fromCurrency
         }
     }).then(function(results){
-        console.log(results);
+        // createWatchlist();
+        // updateNews();
+        // console.log(results);
     })
 }
 
 $(function(){
-    stockApp.init(`aapl`,`1 min`, `intraday`)
+    stockApp.init(`tsla`,`1min`, `intraday`)
 })
