@@ -2,16 +2,24 @@ const stockApp = {};
 stockApp.apiKey = `I57N7ZBNDACAALUE`;
 
 
-stockApp.getTicker = function(ticker){
-    ticker.preventDefault();
-    console.log($(this).text().toUpperCase());
-};
-$('.tickerSearch').on('select', getTicker(ticker));
+// Search Endpoint Suggestions --- CREATE DIV/LI BELOW forEACH result?
+stockApp.searchEndpoint = function(search){
+    $.ajax({
+        url:`https://www.alphavantage.co/query`,
+        method:`GET`,
+        dataType:`json`,
+        data:{
+            function: `SYMBOL_SEARCH`,
+            keywords: search,
+            apikey: stockApp.apiKey,
+        }
+    }).then(function(results){
+        console.log(results);
+    })
+}
 
-// stockApp.getInterval();
-// stockApp.getTimeSeries();
-
-stockApp.init = function(ticker,interval,timeSeries,fromCurrency,){
+// Access information for Ticker
+stockApp.searchStock = function(ticker,interval,timeSeries){
     $.ajax({
         url:`https://www.alphavantage.co/query`,
         method:`GET`,
@@ -21,15 +29,31 @@ stockApp.init = function(ticker,interval,timeSeries,fromCurrency,){
             function: `TIME_SERIES_${timeSeries.toUpperCase()}`,
             symbol: ticker.toUpperCase(),
             apikey: stockApp.apiKey,
-            from_currency:fromCurrency
         }
     }).then(function(results){
-        // createWatchlist();
-        // updateNews();
         // console.log(results);
     })
 }
 
+// FORREX
+stockApp.forEX = function(from,to){
+    $.ajax({
+        url:`https://www.alphavantage.co/query`,
+        method:`GET`,
+        dataType:`json`,
+        data:{
+            function: `CURRENCY_EXCHANGE_RATE`,
+            from_currency: from.toUpperCase(),
+            to_currency: to.toUpperCase(),
+            apikey: stockApp.apiKey,
+        }
+    }).then(function(results){
+        // console.log(results);
+    })
+}
+
+
 $(function(){
     stockApp.init(`tsla`,`1min`, `intraday`)
+    stockApp.search('goo');
 })
