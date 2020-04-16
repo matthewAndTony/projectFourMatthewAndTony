@@ -1,0 +1,27 @@
+// Global Settings
+html{
+    font-size:62.5%
+}
+
+.bleed{
+    max-width:1400px;
+    width:90%;
+    margin:0 auto;
+}
+
+*{
+    list-style:none;
+    text-decoration:none;
+
+    margin:0;
+    padding:0;
+
+    // @include spartanFont;
+    // @include fontSize(16);
+}
+
+img{
+    max-width:100%;
+    object-fit: cover;
+    object-position: center;
+}

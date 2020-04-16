@@ -1,0 +1,57 @@
+// Global Settings
+html{
+    font-size:62.5%
+}
+
+.bleed{
+    max-width:1400px;
+    width:90%;
+    margin:0 auto;
+}
+
+*{
+    list-style:none;
+    text-decoration:none;
+
+    margin:0;
+    padding:0;
+
+    @include spartanFont;
+    @include fontSize(16);
+}
+
+img{
+    max-width:100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.shopNow{
+    color:black;
+    border:1px solid transparent;
+    padding:2%;
+    background:white;
+    text-transform: uppercase;
+}
+
+fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+}
+
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+input[type=number] { 
+    -moz-appearance: textfield;
+    appearance: textfield;
+    margin: 0; 
+}
