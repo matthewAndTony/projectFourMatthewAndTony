@@ -12,7 +12,6 @@ apiCall.data={
     keywords: 'bam',
     apikey: stockApp.apiKey
 }
-console.log(apiCall.data)
 
 // Search Endpoint Suggestions --- CREATE DIV/LI BELOW forEACH result?
 $('.tickerSearchButton').on('click', function () {
@@ -57,7 +56,7 @@ $('.tickerSearchResults').on('click', '.searchResults', function () {
     const ticker = $(this).attr('id')
     console.log(ticker)
 
-    stockApp.searchStock(ticker,'1min', 'intraday')
+    stockApp.searchStock(ticker,'5min', 'intraday')
     
     
 })
@@ -73,7 +72,9 @@ stockApp.searchStock = function(ticker,interval,timeSeries){
             apikey: stockApp.apiKey,
         }
     }).then(function(results){
-        console.log(results);
+        const timeSeriesData = results[`Time Series (${interval})`];
+        console.log(timeSeriesData);
+        
     })
 }
 
