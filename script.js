@@ -89,3 +89,9 @@ $(function(){
     // stockApp.forEX('CAD','USD')
     // stockApp.techIndicate('tsla', '1min', 60, 'open');
 })
+
+let object1= {
+    test: 1,
+    test2: 2,
+    test3: 3
+}
