@@ -19,6 +19,7 @@ $('.tickerSearchButton').on('click', function () {
     console.log('testing')
     const searchItem = $('#searchTickerInput').val();
     stockApp.searchEndpoint(searchItem);
+    stockApp.searchStock()
 })
 stockApp.searchEndpoint = function(search){
     $.ajax({
@@ -53,13 +54,17 @@ stockApp.searchEndpoint = function(search){
 // Access information for Ticker
 $('.tickerSearchResults').on('click', '.searchResults', function () {
     const ticker = $(this).attr('id')
+    const stock = $(this).children('.resultName').text();
+    const currency = $(this).children('.resultCurrency').text();
+
     console.log(ticker)
+    console.log(stock)
 
     $(`.tickerSearchResults`).empty()
-    stockApp.searchStock(ticker,'5min', 'daily');
+    stockApp.searchStock(ticker,'5min', 'daily', stock, currency);
     
 })
-stockApp.searchStock = function(ticker,interval,timeSeries){
+stockApp.searchStock = function(ticker,interval,timeSeries,stock, currency){
     $.ajax({
         url:`https://www.alphavantage.co/query`,
         method:`GET`,
@@ -80,19 +85,19 @@ stockApp.searchStock = function(ticker,interval,timeSeries){
         
         const todaysOpen = todaysResults['1. open']; //Get Open Price
         const todaysClose = todaysResults['4. close']; //Get Closing Price
-        const todaysChanges = todaysOpen - todaysClose; //Get Change in Dolars
+        const todaysChanges = todaysOpen - todaysClose; //Get Change in Dollars
         const todaysChangesPercent = (todaysOpen - todaysClose)/todaysOpen; //Get Change in Percent
         const todaysVolume = todaysResults['5. volume']; //Get Volume        
         
         $('.watchList').append(
-            `<li>Stock Symbol${ticker}</li>
-            <li>Stock Name</li>
-            <li>Stock Currency</li>
-            <li>Stock Open</li>
-            <li>Stock Close</li>
-            <li>Today's Changes</li>
-            <li>Today's Changes in %</li>
-            <li>Today's Volume </li>`
+            `<li>Stock Symbol ${ticker}</li>
+            <li>Stock Name ${stock}</li>
+            <li>Stock Currency ${currency}</li>
+            <li>Stock Open ${todaysOpen}</li>
+            <li>Stock Close ${todaysClose}</li>
+            <li>Today's Changes ${todaysChanges}</li>
+            <li>Today's Changes in % ${todaysChangesPercent}</li>
+            <li>Today's Volume ${todaysVolume}</li>`
         )
     })
 }
