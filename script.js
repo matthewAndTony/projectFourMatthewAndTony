@@ -52,12 +52,11 @@ stockApp.searchEndpoint = function(search){
 
 // Access information for Ticker
 $('.tickerSearchResults').on('click', '.searchResults', function () {
-    console.log('does it work')
     const ticker = $(this).attr('id')
     console.log(ticker)
 
-    stockApp.searchStock(ticker,'5min', 'intraday')
-    
+    $(`.tickerSearchResults`).empty()
+    stockApp.searchStock(ticker,'5min', 'daily');
     
 })
 stockApp.searchStock = function(ticker,interval,timeSeries){
@@ -66,17 +65,38 @@ stockApp.searchStock = function(ticker,interval,timeSeries){
         method:`GET`,
         dataType:`json`,
         data:{
-            interval: interval,
+            // interval: interval,
             function: `TIME_SERIES_${timeSeries.toUpperCase()}`,
             symbol: ticker.toUpperCase(),
             apikey: stockApp.apiKey,
         }
     }).then(function(results){
-        const timeSeriesData = results[`Time Series (${interval})`];
-        console.log(timeSeriesData);
+        const lastRefresh = results['Meta Data']["3. Last Refreshed"];
+    
+        const todaysResults = results[`Time Series (Daily)`][lastRefresh]
+        console.log(results);
         
+        console.log(todaysResults);
+        
+        const todaysOpen = todaysResults['1. open']; //Get Open Price
+        const todaysClose = todaysResults['4. close']; //Get Closing Price
+        const todaysChanges = todaysOpen - todaysClose; //Get Change in Dolars
+        const todaysChangesPercent = (todaysOpen - todaysClose)/todaysOpen; //Get Change in Percent
+        const todaysVolume = todaysResults['5. volume']; //Get Volume        
+        
+        $('.watchList').append(
+            `<li>Stock Symbol${ticker}</li>
+            <li>Stock Name</li>
+            <li>Stock Currency</li>
+            <li>Stock Open</li>
+            <li>Stock Close</li>
+            <li>Today's Changes</li>
+            <li>Today's Changes in %</li>
+            <li>Today's Volume </li>`
+        )
     })
 }
+
 
 // FORREX
 stockApp.forEX = function(from,to){
