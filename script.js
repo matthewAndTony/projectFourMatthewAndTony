@@ -52,8 +52,11 @@ stockApp.searchEndpoint = function(search){
 
 // Access information for Ticker
 $('.tickerSearchResults').on('click', '.searchResults', function () {
-    const ticker = $(this).attr('id')
-    console.log(ticker)
+    const ticker = $(this).attr('id');
+    const stock = $(this).children('.resultName').text();
+    console.log(ticker);
+    console.log(stock);
+    
 
     $(`.tickerSearchResults`).empty()
     stockApp.searchStock(ticker,'5min', 'daily');
