@@ -46,7 +46,8 @@ stockApp.searchStock = function (ticker, timeSeries, stock, currency) {
         const todaysClose = todaysResults['4. close']; //Get Closing Price
         const todaysChanges = todaysOpen - todaysClose; //Get Change in Dollars
         const todaysChangesPercent = (todaysOpen - todaysClose) / todaysOpen; //Get Change in Percent
-        const todaysVolume = todaysResults['5. volume']; //Get Volume        
+        const todaysVolume = todaysResults['5. volume']; //Get Volume
+
         $('.articleSection').empty()
         addedToWatchList[ticker] = {
             Symbol: ticker,
@@ -61,12 +62,13 @@ stockApp.searchStock = function (ticker, timeSeries, stock, currency) {
         $('.watchList').empty();
         for (let item in addedToWatchList) {
             const currentObject = addedToWatchList[item];
+            if (addedToWatchList[item]!= undefined){
+            $('.watchList').append(`<li class="${item}List"></li>`);
             newsApp.init(item);//Gets the news for the watch list items
+            }
             for (let key in currentObject) {
                 if (currentObject[key] != undefined)
-                    $('.watchList').append(
-                        `<li>${key}: ${currentObject[key]}</li>`
-                    )
+                    $(`.${currentObject.Symbol}List`).append(`<li class="${currentObject,key}">${key}: ${currentObject[key]}</li>`)
             }
         }
     })
@@ -98,12 +100,14 @@ newsApp.init = function (query) {
         })
     });
 };
+
 // Search Endpoint Suggestions --- CREATE DIV/LI BELOW forEACH result?
 $('.tickerSearchButton').on('click', function () {
     $('.tickerSearchResults').empty();
     const searchItem = $('#searchTickerInput').val();
     $('.articleSection').empty();//Empty your articles
     stockApp.searchEndpoint(searchItem);
+    $('#searchTickerInput').val("");
 })
 // So you can submit the answer instead of clicking the submit button
 $('#searchTickerInput').on('keypress', function (e) {
@@ -112,6 +116,7 @@ $('#searchTickerInput').on('keypress', function (e) {
         const searchItem = $('#searchTickerInput').val();
         $('.articleSection').empty();//Empty your articles
         stockApp.searchEndpoint(searchItem);
+        $('#searchTickerInput').val("");
     }
 })
 // Access information for Ticker
