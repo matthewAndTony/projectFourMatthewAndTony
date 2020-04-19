@@ -5,7 +5,6 @@ const stockApp = {};
 stockApp.apiKey = `I57N7ZBNDACAALUE`;
 
 const addedToWatchList = {};
-const watchListSearchItems = [];
 
 
 // End Point API Search - When the user submits or clicks the submit button, it will the search suggestions back to the user.
@@ -58,12 +57,7 @@ stockApp.searchStock = function(ticker,timeSeries, stock, currency){
         const todaysVolume = todaysResults['5. volume']; //Get Volume        
 
 
-
-        watchListSearchItems.push(stock, ticker)//Create an array of items to search 
-        watchListSearchItems.forEach(function(item){ //News Api Search for Each item in the Array
-            newsApp.init(item);
-        })
-
+        $('.articleSection').empty()
         
         
         addedToWatchList[ticker] = {
@@ -81,6 +75,8 @@ stockApp.searchStock = function(ticker,timeSeries, stock, currency){
         
         for (let item in addedToWatchList) {
             const currentObject = addedToWatchList[item];
+            newsApp.init(item);//Gets the news for the watch list items
+            
             for (let key in currentObject){
                 if (currentObject[key] != undefined)
                 $('.watchList').append(
