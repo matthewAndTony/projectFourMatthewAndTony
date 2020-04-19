@@ -9,9 +9,15 @@ input[name],
   background: none;
   outline: none;
   transition: all 0.3s;
-  border: 1px solid #a9a9a9;
-  // box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #dddddd;
   margin: 10px 0 0 0;
+}
+input[name]{
+  width:90%;
+}
+
+.tickerSearchButton{
+  width:10%;
 }
 
 .tickerSearchResults,
@@ -40,14 +46,18 @@ input[name],
   padding-right: 10px;
 }
 .searchResults {
-  // display: flex;
+  padding:1%;
   font-size: 2rem;
-  // justify-content: space-between;
   width: calc(100% - 10px);
+  border:1px solid transparent;
 }
 .tickerSearchSection {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  border:1px solid #dddddd;
+  padding: 1%;
+  margin-top:1%;
 }
 .resultTicker {
   font-weight: 600;
@@ -61,14 +71,20 @@ input[name],
 }
 
 .resultCurrency {
-  border-bottom: 2px solid #d3d3d3;
+  // border-bottom: 2px solid #dddddd;
   font-size: 1.25rem;
 }
 
 .watchList {
-  // padding: 10px 0 0 0;
-  border: 1px solid #d3d3d3;
+  margin-top:1%;
+  border: 1px solid #dddddd;
 }
+
+.stockWatchItem{
+  border: 1px solid #dddddd;
+  padding: 1%;
+}
+
 .stockWatchItem li {
   font-size: 1.5rem;
   padding: 5px 0 5px 0;
@@ -79,10 +95,3 @@ span {
   font-size: 1.75rem;
 }
 
-article .articleImage img {
-  // height: 100%;
-}
-
-article .articleContentContainer {
-  // height: 50%;
-}

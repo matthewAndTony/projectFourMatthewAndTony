@@ -280,16 +280,29 @@ img {
 }
 
 nav {
-  background-color: #dcdcdc;
-  padding: 3px 0 2px 0;
+  background-color: black;
+  padding: 2% 0;
+  border-bottom: 1px solid #d3d3d3;
 }
 
 nav a {
   text-decoration: none;
-  color: #000;
-  font-size: 1.5rem;
-  font-family: "Open Sans", sans-serif;
-  opacity: 0.5;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 26px;
+  font-size: 2.6rem;
+  text-transform: uppercase;
+  -webkit-transition: ease 0.3s;
+  transition: ease 0.3s;
+  border-bottom: 2px solid transparent;
+}
+
+nav i {
+  font-size: 18px;
+  font-size: 1.8rem;
+  -webkit-transition: ease 0.3s;
+  transition: ease 0.3s;
 }
 
 input[name],
@@ -300,9 +313,23 @@ input[name],
   outline: none;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  -webkit-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-          box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-  margin: 10px 0 5px 0;
+  border: 1px solid #dddddd;
+  margin: 10px 0 0 0;
+}
+
+input[name] {
+  width: 90%;
+}
+
+.tickerSearchButton {
+  width: 10%;
+}
+
+.tickerSearchResults,
+.watchList {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 100%;
+          flex: 1 0 100%;
 }
 
 .articleTitle {
@@ -327,8 +354,24 @@ input[name],
 }
 
 .searchResults {
+  padding: 1%;
   font-size: 2rem;
   width: calc(100% - 10px);
+  border: 1px solid transparent;
+}
+
+.tickerSearchSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 1px solid #dddddd;
+  padding: 1%;
+  margin-top: 1%;
 }
 
 .resultTicker {
@@ -345,22 +388,32 @@ input[name],
 }
 
 .resultCurrency {
-  border-bottom: 2px solid silver;
   font-size: 1.25rem;
 }
 
 .watchList {
-  padding: 10px 0 0 0;
-  margin-left: 10px;
+  margin-top: 1%;
+  border: 1px solid #dddddd;
 }
 
-.watchList li {
+.stockWatchItem {
+  border: 1px solid #dddddd;
+  padding: 1%;
+}
+
+.stockWatchItem li {
   font-size: 1.5rem;
+  padding: 5px 0 5px 0;
 }
 
-.watchList span {
-  font-weight: 700;
+span {
+  font-weight: 600;
   font-size: 1.75rem;
+}
+
+footer p {
+  text-align: center;
+  font-size: 1rem;
 }
 
 input[name]:hover,
@@ -376,19 +429,23 @@ input[name]:focus,
 nav a:hover,
 nav a:focus {
   text-decoration: none;
-  -webkit-transition: ease 0.3s;
-  transition: ease 0.3s;
-  border-bottom: 2px solid #000;
-  color: #000;
+  border-bottom: 2px solid red;
+  color: white;
   opacity: 1;
+}
+
+nav a:hover > i,
+nav a:focus > i {
+  color: red;
 }
 
 .tickerSearchResults li:hover,
 .tickerSearchResults li:focus {
-  color: white;
-  background: #d8d3d3;
+  color: #ececec;
+  background: #c5c5c5;
   -webkit-transition: ease 0.3s;
   transition: ease 0.3s;
+  border: 1px solid #dddddd;
 }
 
 nav ul {
@@ -408,21 +465,33 @@ nav ul {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .articleSection a {
   color: #000;
-  width: 33%;
-  padding: 10px 10px;
+  width: 32%;
+  margin-bottom: 5%;
+  border: 1px solid #dddddd;
 }
 
 article {
-  padding: 10px 10px;
-  width: calc(100% - 20px);
-  -webkit-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
-          box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+  padding: 2% 4%;
+  -webkit-box-shadow: 2px 2px 2px 1px rgba(245, 165, 165, 0.1);
+          box-shadow: 2px 2px 2px 1px rgba(245, 165, 165, 0.1);
   background-size: cover;
   opacity: 0.8;
+  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .articleContentContainer {
@@ -433,4 +502,18 @@ article {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.articleImage {
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.articleImage img {
+  height: 100%;
 }

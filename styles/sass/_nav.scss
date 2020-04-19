@@ -1,14 +1,24 @@
 // Nav Settings
 
 nav {
-  background-color: #dcdcdc;
-  padding: 3px 0 2px 0;
+  background-color: black;
+  padding:2% 0;
+  border-bottom:1px solid #d3d3d3;
 }
 
 nav a {
   text-decoration: none;
-  color: #000;
-  font-size: 1.5rem;
-  font-family: "Open Sans", sans-serif;
-  opacity: 0.5;
+  color: white; 
+  font-family: "Montserrat", sans-serif;
+  font-weight:600;
+  @include fontSize(26);
+  text-transform:uppercase;
+  transition: ease 0.3s;
+  border-bottom:2px solid transparent;
+}
+
+nav i {
+  @include fontSize(18);
+  transition: ease 0.3s;
+
 }

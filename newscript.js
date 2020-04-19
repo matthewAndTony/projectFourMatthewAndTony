@@ -23,7 +23,7 @@ stockApp.searchEndpoint = function (search) {
                 <p class="resultName">${item['2. name']}</p>
                 <p class="resultRegion">${item['4. region']}</p>
                 <p class="resultCurrency">${item['8. currency']}</p>
-                <p>Click to add to Watchlist!</p>
+                <p>CLICK TO ADD TO WATCHLIST</p>
             </li>`)
         })
     })
@@ -40,6 +40,7 @@ stockApp.searchStock = function (ticker, timeSeries, stock, currency) {
             apikey: stockApp.apiKey,
         }
     }).then(function (results) {
+        console.log(results)
         const lastRefresh = results['Meta Data']["3. Last Refreshed"];
         const todaysResults = results[`Time Series (Daily)`][lastRefresh]
         const todaysOpen = todaysResults['1. open']; //Get Open Price
