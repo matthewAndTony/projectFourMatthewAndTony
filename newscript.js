@@ -32,7 +32,7 @@ stockApp.searchEndpoint = function(search){
     })
 }
 
-//Ticker Information API - When the user selects which ticker they would like to add by clicking, the ticker's information will be displayed in an LI under the watchlist.
+//Ticker Information API - When the user selects which ticker they would like to add by clicking, the ticker's information will be displayed in an LI under the watch list.
 
 stockApp.searchStock = function(ticker,timeSeries, stock, currency){
     $.ajax({
