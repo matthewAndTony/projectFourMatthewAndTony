@@ -279,10 +279,6 @@ img {
      object-position: center;
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 280c3e8ac811675bc55e90420411625bfb4ca54d
 nav {
   background-color: #dcdcdc;
   padding: 3px 0 2px 0;
@@ -363,25 +359,27 @@ input[name],
 }
 
 .resultCurrency {
-  border-bottom: 2px solid silver;
+  border-bottom: 2px solid #d3d3d3;
   font-size: 1.25rem;
 }
 
 .watchList {
-  padding: 10px 0 0 0;
+  border: 1px solid #d3d3d3;
 }
 
-.watchList li {
+.stockWatchItem li {
   font-size: 1.5rem;
+  padding: 5px 0 5px 0;
 }
 
-.watchList span {
-  font-weight: 700;
+span {
+  font-weight: 600;
   font-size: 1.75rem;
 }
 
-footer img {
-  min-height: 300px;
+footer p {
+  text-align: center;
+  font-size: 1rem;
 }
 
 input[name]:hover,
@@ -434,10 +432,11 @@ nav ul {
 .articleSection a {
   color: #000;
   width: 33%;
+  margin-bottom: 5%;
+  border: 1px solid #a9a9a9;
 }
 
 article {
-  border: 1px solid #a9a9a9;
   padding: 10px 10px;
   width: calc(100% - 20px);
   -webkit-box-shadow: 2px 2px 2px 1px rgba(245, 165, 165, 0.1);
