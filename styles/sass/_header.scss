@@ -9,8 +9,14 @@ input[name],
   background: none;
   outline: none;
   transition: all 0.3s;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-  margin: 10px 0 5px 0;
+  border: 1px solid #a9a9a9;
+  // box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+  margin: 10px 0 0 0;
+}
+
+.tickerSearchResults,
+.watchList {
+  flex: 1 0 100%;
 }
 
 .articleTitle {
@@ -39,7 +45,10 @@ input[name],
   // justify-content: space-between;
   width: calc(100% - 10px);
 }
-
+.tickerSearchSection {
+  display: flex;
+  flex-wrap: wrap;
+}
 .resultTicker {
   font-weight: 600;
   font-size: 2rem;
@@ -58,7 +67,6 @@ input[name],
 
 .watchList {
   padding: 10px 0 0 0;
-  margin-left: 10px;
 }
 .watchList li {
   font-size: 1.5rem;
