@@ -1,20 +1,9 @@
-@import 'setup';
+@import "setup";
 // @import 'variableMixins';
-@import 'global';
-// @import 'nav';
-// @import 'header';
+@import "global";
+@import "nav";
+@import "header";
 // @import 'body';
 // @import 'footer';
-// @import 'hoverFocus';
-@import 'tempstyle'
-
-// // P2
-// @import 'itemConfig';
-// @import 'mediaQueries'
-// // Global Header
-// // @import 'header';
-// // Global Nav Top
-// // @import 'nav';
-// // Global Footer
-// // @import 'footer';
-// // 
+@import "hoverFocus";
+@import "tempstyle";

@@ -1,0 +1,30 @@
+// Hover and Focus Settings
+
+// input and button hover/focus
+
+input[name]:hover,
+input[name]:focus,
+.tickerSearchButton:hover,
+.tickerSearchButton:focus {
+  color: black;
+  background: #dcdcdc;
+  transition: all 0.3s;
+}
+// nav and button hover/focus
+
+nav a:hover,
+nav a:focus {
+  text-decoration: none;
+  transition: ease 0.3s;
+  text-decoration-line: underline;
+}
+// nav and button hover/focus
+
+.tickerSearchResults li:hover,
+.tickerSearchResults li:focus,
+.watchList li:hover,
+.watchList li:focus {
+  color: white;
+  background: #d8d3d3;
+  transition: ease 0.3s;
+}

@@ -1,0 +1,33 @@
+// Header Settings
+
+// need to remove the white space between input and button
+
+input[name],
+.tickerSearchButton {
+  padding: 5px 10px;
+  border: none;
+  background: none;
+  outline: none;
+  transition: all 0.3s;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  margin: 10px 0 5px 0;
+}
+
+.articleTitle {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 800;
+  padding-bottom: 5px;
+}
+
+.articleAuthor {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  padding-bottom: 5px;
+}
+
+.articleContent {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 1.25rem;
+  padding-right: 150px;
+}
