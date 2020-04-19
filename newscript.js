@@ -62,14 +62,14 @@ stockApp.searchStock = function(ticker,timeSeries, stock, currency){
 
 
         $('.watchList').append(
-            `<li>Stock Symbol: ${ticker}</li>
-            <li>Stock Name: ${stock}</li>
-            <li>Stock Currency: ${currency}</li>
-            <li>Stock Open: ${todaysOpen}</li>
-            <li>Stock Close: ${todaysClose}</li>
-            <li>Today's Changes: ${todaysChanges}</li>
-            <li>Today's Changes in %: ${todaysChangesPercent}</li>
-            <li>Today's Volume: ${todaysVolume}</li>`
+            `<li><span>Stock Symbol:</span> ${ticker}</li>
+            <li><span>Stock Name:</span>${stock}</li>
+            <li><span>Stock Currency:</span> ${currency}</li>
+            <li><span>Stock Open:</span>${todaysOpen}</li>
+            <li><span>Stock Close:</span> ${todaysClose}</li>
+            <li><span>Today's Changes:</span>${todaysChanges}</li>
+            <li><span>Today's Changes in %:</span> ${todaysChangesPercent}</li>
+            <li><span>Today's Volume:</span> ${todaysVolume}</li>`
         )
     })
 }

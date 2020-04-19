@@ -5,19 +5,23 @@ nav ul {
 .articleSection {
   display: flex;
   padding-top: 10px;
+  flex-wrap: wrap;
+  width: 100%;
 }
 .articleSection a {
   color: #000;
+  width: 33%;
+  padding: 10px 10px;
 }
 
 // placeholder image to see the style - need to apply default articles upon arrival to the page
-// when search for ticker and the articles load after selecting the company you were searching for - flex box does apply and the articles are all different sizes need to control look an feel
+// when search for ticker and the articles load after selecting the company you were searching for - flex box does not apply and the articles are all different sizes need to control look an feel
 article {
   // border: 1px solid black;
   padding: 10px 10px;
   width: calc(100% - 20px);
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
-  background: url(http://placekitten.com/200/200) no-repeat 100%;
+  // background: url(http://placekitten.com/200/200) no-repeat 100%;
   background-size: cover;
   opacity: 0.8;
 }

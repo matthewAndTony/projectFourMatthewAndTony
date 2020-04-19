@@ -16,18 +16,54 @@ input[name],
 .articleTitle {
   font-family: "Open Sans", sans-serif;
   font-weight: 800;
-  padding-bottom: 5px;
+  font-size: 2rem;
+  padding-bottom: 10px;
 }
 
 .articleAuthor {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  padding-bottom: 5px;
+  font-size: 1.5rem;
+  padding-bottom: 10px;
 }
 
 .articleContent {
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
   font-size: 1.25rem;
-  padding-right: 150px;
+  padding-right: 10px;
+}
+.searchResults {
+  // display: flex;
+  font-size: 2rem;
+  // justify-content: space-between;
+  width: calc(100% - 10px);
+}
+
+.resultTicker {
+  font-weight: 600;
+  font-size: 2rem;
+}
+.resultName {
+  font-size: 1.75rem;
+}
+.resultRegion {
+  font-size: 1.5rem;
+}
+
+.resultCurrency {
+  border-bottom: 2px solid silver;
+  font-size: 1.25rem;
+}
+
+.watchList {
+  padding: 10px 0 0 0;
+  margin-left: 10px;
+}
+.watchList li {
+  font-size: 1.5rem;
+}
+.watchList span {
+  font-weight: 700;
+  font-size: 1.75rem;
 }
