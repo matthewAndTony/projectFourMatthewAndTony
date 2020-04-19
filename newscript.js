@@ -81,7 +81,7 @@ newsApp.init = function (query) {
             apiKey: newsApp.apiKey,
             q: query,
             sortBy: 'relevancy',
-            pageSize: 3,
+            pageSize: 6,
         }
     }).then(function (results) {
         results.articles.forEach(function (item) {
