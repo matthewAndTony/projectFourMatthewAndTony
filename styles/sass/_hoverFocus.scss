@@ -12,18 +12,22 @@ input[name]:focus,
 }
 // nav and button hover/focus
 
+// nav:hover,
+// nav:focus {
+//   opacity: 0.5;
+// }
 nav a:hover,
 nav a:focus {
   text-decoration: none;
   transition: ease 0.3s;
-  text-decoration-line: underline;
+  border-bottom: 2px solid #000;
+  color: #000;
+  opacity: 1;
 }
 // nav and button hover/focus
 
 .tickerSearchResults li:hover,
-.tickerSearchResults li:focus,
-.watchList li:hover,
-.watchList li:focus {
+.tickerSearchResults li:focus {
   color: white;
   background: #d8d3d3;
   transition: ease 0.3s;
