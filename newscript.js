@@ -4,7 +4,8 @@ newsApp.apiKey = `f9648353dfc841bb861714d68d34c9c2`;
 const stockApp = {};
 stockApp.apiKey = `I57N7ZBNDACAALUE`;
 
-const addedToWatchlist = [];
+const addedToWatchList = {};
+const watchListSearchItems = [];
 
 
 // End Point API Search - When the user submits or clicks the submit button, it will the search suggestions back to the user.
@@ -27,6 +28,7 @@ stockApp.searchEndpoint = function(search){
                 <p class="resultName">${item['2. name']}</p>
                 <p class="resultRegion">${item['4. region']}</p>
                 <p class="resultCurrency">${item['8. currency']}</p>
+                <p>Click to add to Watchlist!</p>
             </li>`)
         })
     })
@@ -55,22 +57,39 @@ stockApp.searchStock = function(ticker,timeSeries, stock, currency){
         const todaysChangesPercent = (todaysOpen - todaysClose)/todaysOpen; //Get Change in Percent
         const todaysVolume = todaysResults['5. volume']; //Get Volume        
 
-        addedToWatchlist.push(stock, ticker)//Create an array of items to search 
-        addedToWatchlist.forEach(function(item){ //News Api Search for Each item in the Array
+
+
+        watchListSearchItems.push(stock, ticker)//Create an array of items to search 
+        watchListSearchItems.forEach(function(item){ //News Api Search for Each item in the Array
             newsApp.init(item);
         })
 
+        
+        
+        addedToWatchList[ticker] = {
+            Symbol: ticker,
+            Name: stock,
+            Currency: currency,
+            Open : todaysOpen,
+            Close: todaysClose,
+            Changes: todaysChanges,
+            ChangePercentage: todaysChangesPercent,
+            Volume: todaysVolume
+        }
 
-        $('.watchList').append(
-            `<li><span>Stock Symbol:</span> ${ticker}</li>
-            <li><span>Stock Name:</span>${stock}</li>
-            <li><span>Stock Currency:</span> ${currency}</li>
-            <li><span>Stock Open:</span>${todaysOpen}</li>
-            <li><span>Stock Close:</span> ${todaysClose}</li>
-            <li><span>Today's Changes:</span>${todaysChanges}</li>
-            <li><span>Today's Changes in %:</span> ${todaysChangesPercent}</li>
-            <li><span>Today's Volume:</span> ${todaysVolume}</li>`
-        )
+        $('.watchList').empty();
+        
+        for (let item in addedToWatchList) {
+            const currentObject = addedToWatchList[item];
+            for (let key in currentObject){
+                if (currentObject[key] != undefined)
+                $('.watchList').append(
+                    `<li>${key}: ${currentObject[key]}</li>`
+                )
+            }
+        }
+
+
     })
 }
 
@@ -87,9 +106,7 @@ newsApp.init = function (query) {
             pageSize: 3,
         }
     }).then(function (results) {
-        console.log(results);
         results.articles.forEach(function (item) {
-            console.log(item.title)
             $('.articleSection').append(
                 `<a href="${item.url}">
                 <article>
