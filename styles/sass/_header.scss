@@ -61,17 +61,28 @@ input[name],
 }
 
 .resultCurrency {
-  border-bottom: 2px solid silver;
+  border-bottom: 2px solid #d3d3d3;
   font-size: 1.25rem;
 }
 
 .watchList {
-  padding: 10px 0 0 0;
+  // padding: 10px 0 0 0;
+  border: 1px solid #d3d3d3;
 }
-.watchList li {
+.stockWatchItem li {
   font-size: 1.5rem;
+  padding: 5px 0 5px 0;
 }
-.watchList span {
-  font-weight: 700;
+
+span {
+  font-weight: 600;
   font-size: 1.75rem;
+}
+
+article .articleImage img {
+  // height: 100%;
+}
+
+article .articleContentContainer {
+  // height: 50%;
 }

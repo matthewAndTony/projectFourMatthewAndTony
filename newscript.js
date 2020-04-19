@@ -63,12 +63,12 @@ stockApp.searchStock = function (ticker, timeSeries, stock, currency) {
         for (let item in addedToWatchList) {
             const currentObject = addedToWatchList[item];
             if (addedToWatchList[item]!= undefined){
-            $('.watchList').append(`<li class="${item}List"></li>`);
+            $('.watchList').append(`<ul class="${item}List stockWatchItem"></ul>`);
             newsApp.init(item);//Gets the news for the watch list items
             }
             for (let key in currentObject) {
                 if (currentObject[key] != undefined)
-                    $(`.${currentObject.Symbol}List`).append(`<li class="${currentObject,key}">${key}: ${currentObject[key]}</li>`)
+                    $(`.${currentObject.Symbol}List`).append(`<li class="${currentObject,key}">${key}:<span> ${currentObject[key]}</span></li>`)
             }
         }
     })
@@ -91,9 +91,11 @@ newsApp.init = function (query) {
                 `<a href="${item.url}">
                 <article>
                 <div class="imageContainer articleImage"><img src=${item.urlToImage}></div>
+                <div class="articleContentContainer">
                 <h2 class="articleTitle">${item.title}</h2>
                 <p class="articleAuthor">${item.author}</p>
                 <p class="articleContent">${item.description}</p>
+                </div>
                 </article>
                 </a>`
             )
@@ -127,3 +129,8 @@ $('.tickerSearchResults').on('click', '.searchResults', function () {
     $(`.tickerSearchResults`).empty()
     stockApp.searchStock(ticker, 'daily', stock, currency);
 });
+
+// Document ready
+$(function () {
+    newsApp.init('nasdaq, nyse, tsx');
+})
