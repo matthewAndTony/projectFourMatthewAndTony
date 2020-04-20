@@ -3,7 +3,6 @@ newsApp.apiKey = `f9648353dfc841bb861714d68d34c9c2`;
 const stockApp = {};
 stockApp.apiKey = `I57N7ZBNDACAALUE`;
 const addedToWatchList = {};
-let ctx = $('#myChart');
 
 // End Point API Search - When the user submits or clicks the submit button, it will the search suggestions back to the user.
 stockApp.searchEndpoint = function (search) {
@@ -57,10 +56,7 @@ stockApp.searchStock = function (ticker, timeSeries, stock, currency) {
         for (let key in monthData) {
             monthDataArray.push(key)
             closePriceArray.push(monthData[key]["4. close"])
-        }
-
-        stockApp.createGraph(monthDataArray,closePriceArray)
-        
+        }        
         
         //////////////////////////////////////////////////
         $('.articleSection').empty()
@@ -78,15 +74,26 @@ stockApp.searchStock = function (ticker, timeSeries, stock, currency) {
         for (let item in addedToWatchList) {
             const currentObject = addedToWatchList[item];
 
+            //////////////
             if (addedToWatchList[item]!= undefined){
-            $('.watchList').append(`<ul class="${item}List stockWatchItem"></ul>`);
-            $(`.${item}List`).append(`<button class="unsubscribe">Remove from Watchlist</button>`);
-            newsApp.init(item);//Gets the news for the watch list items
-            }
+            $('.watchList').append(`<ul class="${item}List stockWatchItem"></ul>`);//Creating Stock UL for Watchlist
             for (let key in currentObject) {
                 if (currentObject[key] != undefined)
                     $(`.${currentObject.Symbol}List`).append(`<li class="${currentObject,key}">${key}:<span> ${currentObject[key]}</span></li>`)
             }
+            //////////////
+
+            /////////////
+            $(`.${item}List`).append(`<canvas id="myChart" width="400" height="400"></canvas>`);//Creating Graph on DOM
+            stockApp.createGraph(monthDataArray, closePriceArray)//Creating Graph JS /CALLING FUNCTION
+            /////////////
+
+
+            $(`.${item}List`).append(`<button class="unsubscribe">Remove from Watchlist</button>`);//Create remove from watchlist button
+
+            newsApp.init(item);//Gets the news for the watch list items
+            }
+
         }
     })
 }
@@ -157,6 +164,7 @@ $(function () {
 //Function that creates a graph when given Y Array and X Array
 stockApp.createGraph = function(x, y){
     // chart.js stuff
+    let ctx = $('#myChart');
     
     let myChart = new Chart(ctx, {
         type: 'line',
