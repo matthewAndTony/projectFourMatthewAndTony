@@ -47,7 +47,28 @@ stockApp.searchStock = function (ticker, timeSeries, stock, currency) {
         const todaysChanges = todaysOpen - todaysClose; //Get Change in Dollars
         const todaysChangesPercent = (todaysOpen - todaysClose) / todaysOpen; //Get Change in Percent
         const todaysVolume = todaysResults['5. volume']; //Get Volume
-
+        
+        // chart.js stuff
+        // let ctx = document.getElementById('myChart').getContext('2d');
+        // const monthData = results[`Time Series (Daily)`]
+        // const monthDataArray = [] 
+        // const closePriceArray = []
+        // for (let key in monthData) {
+        //     monthDataArray.push(key)
+        //     closePriceArray.push(monthData[key]["4. close"])
+        // }
+        // console.log(monthDataArray)
+        // console.log(closePriceArray)
+        //     let myChart = new myChart(ctx, {
+        //         type: 'line', //bar, horizontalBar, pie, line, doughnut, radar, polarArea
+        //         data: {
+        //             labels: monthDataArray,//dailyPrice
+        //             datasets: [{
+        //                 data: closePriceArray
+        //             }],//time of day
+        //         },
+        //         // options: {};
+        //     })
         $('.articleSection').empty()
         addedToWatchList[ticker] = {
             Symbol: ticker,
