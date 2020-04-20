@@ -40,7 +40,6 @@ stockApp.searchStock = function (ticker, timeSeries, stock, currency) {
             apikey: stockApp.apiKey,
         }
     }).then(function (results) {
-        console.log(results)
         const lastRefresh = results['Meta Data']["3. Last Refreshed"];
         const todaysResults = results[`Time Series (Daily)`][lastRefresh]
         const todaysOpen = todaysResults['1. open']; //Get Open Price
@@ -63,8 +62,10 @@ stockApp.searchStock = function (ticker, timeSeries, stock, currency) {
         $('.watchList').empty();
         for (let item in addedToWatchList) {
             const currentObject = addedToWatchList[item];
+
             if (addedToWatchList[item]!= undefined){
             $('.watchList').append(`<ul class="${item}List stockWatchItem"></ul>`);
+            $(`.${item}List`).append(`<button class="unsubscribe">Remove from Watchlist</button>`);
             newsApp.init(item);//Gets the news for the watch list items
             }
             for (let key in currentObject) {
@@ -131,7 +132,10 @@ $('.tickerSearchResults').on('click', '.searchResults', function () {
     stockApp.searchStock(ticker, 'daily', stock, currency);
 });
 
+
+
 // Document ready
 $(function () {
     newsApp.init('nasdaq, nyse, tsx');
 })
+
