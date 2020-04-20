@@ -17,12 +17,24 @@
   <body>
     <nav>
       <ul class="bleed">
-        <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-        <li><a href="#"><i class="fas fa-binoculars"></i> Watchlist</a></li>
-        <li><a href="#"><i class="fas fa-chart-line"></i> Market Trends</a></li>
-        <li><a href="#"><i class="fas fa-truck-moving"></i> Biggest Movers</a></li>
-        <li><a href="#"><i class="fab fa-bitcoin"></i> Crypto</a></li>
-        <li><a href="#"><i class="fas fa-coins"></i> ForEX</a></li>
+        <li>
+          <a href="#"><i class="fas fa-home"></i> Home</a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-binoculars"></i> Watchlist</a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-chart-line"></i> Market Trends</a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-truck-moving"></i> Biggest Movers</a>
+        </li>
+        <li>
+          <a href="#"><i class="fab fa-bitcoin"></i> Crypto</a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-coins"></i> ForEX</a>
+        </li>
       </ul>
     </nav>
     <!-- Ticker Search Bar-->
@@ -38,6 +50,7 @@
       </button>
       <ul class="tickerSearchResults"></ul>
       <ul class="watchList"></ul>
+      <canvas id="myChart" width="400" height="400"></canvas>
     </section>
     <!--  -->
 
@@ -98,6 +111,11 @@
     <script
       src="https://code.jquery.com/jquery-3.4.0.min.js"
       integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+      integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI="
       crossorigin="anonymous"
     ></script>
     <script src="./newscript.js"></script>
