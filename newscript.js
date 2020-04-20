@@ -180,6 +180,8 @@ stockApp.createGraph = function(x, y, ticker){
             }],
         },
         options: {
+            responsive: true,
+            maintainAspectRatio: true,
             scales: {
                 yAxes: [{
                     ticks: {

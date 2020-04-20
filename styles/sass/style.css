@@ -280,16 +280,77 @@ img {
 }
 
 nav {
-  background-color: #dcdcdc;
-  padding: 3px 0 2px 0;
+  background-color: black;
+  padding: 2% 0;
+  border-bottom: 1px solid #d3d3d3;
 }
 
 nav a {
   text-decoration: none;
-  color: #000;
-  font-size: 1.5rem;
-  font-family: "Open Sans", sans-serif;
-  opacity: 0.5;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 26px;
+  font-size: 2.6rem;
+  text-transform: uppercase;
+  -webkit-transition: ease 0.3s;
+  transition: ease 0.3s;
+  border-bottom: 2px solid transparent;
+}
+
+nav i {
+  font-size: 18px;
+  font-size: 1.8rem;
+  -webkit-transition: ease 0.3s;
+  transition: ease 0.3s;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.logo i {
+  color: white;
+  font-size: 38px;
+  font-size: 3.8rem;
+}
+
+.mobileNav {
+  background: white;
+  opacity: 80%;
+  position: absolute;
+  z-index: 1;
+  width: 30%;
+  left: -100%;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+input[name="navToggle"]:checked ~ .mobileNav {
+  left: 0;
+}
+
+input[name="navToggle"]:checked + label[for="navToggle"] {
+  border: 1px solid black;
+}
+
+input[name="navToggle"]:checked + label[for="navToggle"] i {
+  color: white;
+  font-size: 20px;
+  font-size: 2rem;
+}
+
+.topNav .mainUL {
+  display: none;
+}
+
+label[for="navToggle"] {
+  display: initial;
 }
 
 input[name],
@@ -300,8 +361,16 @@ input[name],
   outline: none;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  border: 1px solid #a9a9a9;
+  border: 1px solid #dddddd;
   margin: 10px 0 0 0;
+}
+
+input[name] {
+  width: 90%;
+}
+
+.tickerSearchButton {
+  width: 10%;
 }
 
 .tickerSearchResults,
@@ -333,8 +402,10 @@ input[name],
 }
 
 .searchResults {
+  padding: 1%;
   font-size: 2rem;
   width: calc(100% - 10px);
+  border: 1px solid transparent;
 }
 
 .tickerSearchSection {
@@ -343,6 +414,12 @@ input[name],
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 1px solid #dddddd;
+  padding: 1%;
+  margin-top: 1%;
 }
 
 .resultTicker {
@@ -359,12 +436,17 @@ input[name],
 }
 
 .resultCurrency {
-  border-bottom: 2px solid #d3d3d3;
   font-size: 1.25rem;
 }
 
 .watchList {
-  border: 1px solid #d3d3d3;
+  margin-top: 1%;
+  border: 1px solid #dddddd;
+}
+
+.stockWatchItem {
+  border: 1px solid #dddddd;
+  padding: 1%;
 }
 
 .stockWatchItem li {
@@ -382,6 +464,34 @@ footer p {
   font-size: 1rem;
 }
 
+@media (max-width: 1290px) {
+  nav {
+    padding: 2% 0;
+  }
+  nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  nav a {
+    font-weight: 600;
+    font-size: 20px;
+    font-size: 2rem;
+  }
+  nav i {
+    font-size: 15px;
+    font-size: 1.5rem;
+  }
+  .logo i {
+    color: white;
+    font-size: 28px;
+    font-size: 2.8rem;
+  }
+}
+
 input[name]:hover,
 input[name]:focus,
 .tickerSearchButton:hover,
@@ -395,28 +505,23 @@ input[name]:focus,
 nav a:hover,
 nav a:focus {
   text-decoration: none;
-  -webkit-transition: ease 0.3s;
-  transition: ease 0.3s;
-  border-bottom: 2px solid #000;
-  color: #000;
+  border-bottom: 2px solid red;
+  color: white;
   opacity: 1;
+}
+
+nav a:hover > i,
+nav a:focus > i {
+  color: red;
 }
 
 .tickerSearchResults li:hover,
 .tickerSearchResults li:focus {
-  color: white;
-  background: #d8d3d3;
+  color: #ececec;
+  background: #c5c5c5;
   -webkit-transition: ease 0.3s;
   transition: ease 0.3s;
-}
-
-nav ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  border: 1px solid #dddddd;
 }
 
 .articleSection {
@@ -427,22 +532,33 @@ nav ul {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .articleSection a {
   color: #000;
-  width: 33%;
+  width: 32%;
   margin-bottom: 5%;
-  border: 1px solid #a9a9a9;
+  border: 1px solid #dddddd;
 }
 
 article {
-  padding: 10px 10px;
-  width: calc(100% - 20px);
+  padding: 2% 4%;
   -webkit-box-shadow: 2px 2px 2px 1px rgba(245, 165, 165, 0.1);
           box-shadow: 2px 2px 2px 1px rgba(245, 165, 165, 0.1);
   background-size: cover;
   opacity: 0.8;
+  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .articleContentContainer {
@@ -453,5 +569,19 @@ article {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.articleImage {
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.articleImage img {
+  height: 100%;
 }
 /*# sourceMappingURL=style.css.map */

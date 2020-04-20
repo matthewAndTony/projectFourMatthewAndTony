@@ -1,9 +1,10 @@
 @import "setup";
-@import 'variableMixins';
+@import "variableMixins";
 @import "global";
 @import "nav";
 @import "header";
 // @import 'body';
 @import "footer";
+@import "mediaQueries";
 @import "hoverFocus";
 @import "tempstyle";

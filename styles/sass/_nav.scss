@@ -2,23 +2,83 @@
 
 nav {
   background-color: black;
-  padding:2% 0;
-  border-bottom:1px solid #d3d3d3;
+  padding: 2% 0;
+  border-bottom: 1px solid #d3d3d3;
 }
 
 nav a {
   text-decoration: none;
-  color: white; 
+  color: white;
   font-family: "Montserrat", sans-serif;
-  font-weight:600;
+  font-weight: 600;
   @include fontSize(26);
-  text-transform:uppercase;
+  text-transform: uppercase;
   transition: ease 0.3s;
-  border-bottom:2px solid transparent;
+  border-bottom: 2px solid transparent;
 }
 
 nav i {
   @include fontSize(18);
   transition: ease 0.3s;
+}
 
+nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+// .logo {
+//   position: relative;
+//   border: 1px solid white;
+// }
+.logo i {
+  color: white;
+  @include fontSize(38);
+}
+
+// .logo span {
+//   position: absolute;
+//   color: red;
+//   @include fontSize(30);
+//   left: 25%;
+//   font-family: "Montserrat", sans-serif;
+// }
+
+// .logo .tony {
+//   color: white;
+//   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+//     1px 1px 0 #000;
+//   @include fontSize(30);
+//   left: 40%;
+// }
+
+.mobileNav {
+  // display:none;
+  background: white;
+  opacity: 80%;
+  position: absolute;
+  z-index: 1;
+  width: 30%;
+  left: -100%;
+  transition: 500ms;
+}
+input[name="navToggle"]:checked ~ .mobileNav {
+  left: 0;
+}
+input[name="navToggle"]:checked + label[for="navToggle"] {
+  border: 1px solid black;
+  i {
+    color: white;
+    @include fontSize(20);
+  }
+}
+
+// mobile menu integration
+// Hide old nav
+.topNav .mainUL {
+  display: none;
+}
+//show hamburger
+label[for="navToggle"] {
+  display: initial;
 }

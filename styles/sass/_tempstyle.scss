@@ -1,14 +1,9 @@
-nav ul {
-  display: flex;
-  justify-content: space-between;
-}
 .articleSection {
   display: flex;
   padding-top: 10px;
   flex-wrap: wrap;
   width: 100%;
-  justify-content:space-between;
-
+  justify-content: space-between;
 }
 .articleSection a {
   color: #000;
@@ -16,8 +11,6 @@ nav ul {
   margin-bottom: 5%;
   border: 1px solid #dddddd;
 }
-
-
 
 // placeholder image to see the style - need to apply default articles upon arrival to the page
 // when search for ticker and the articles load after selecting the company you were searching for - flex box does not apply and the articles are all different sizes need to control look an feel
@@ -27,8 +20,8 @@ article {
   background-size: cover;
   opacity: 0.8;
   height: 500px;
-  display:flex;
-  flex-wrap:wrap;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -37,12 +30,12 @@ article {
   flex-direction: column;
 }
 
-.articleImage{
-  height:50%;
-  display:flex;
+.articleImage {
+  height: 50%;
+  display: flex;
   justify-content: center;
 }
 
-.articleImage img{
-  height:100%;
+.articleImage img {
+  height: 100%;
 }
