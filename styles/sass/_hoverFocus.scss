@@ -20,12 +20,10 @@ nav a:hover,
 nav a:focus{
   text-decoration: none;
   border-bottom: 2px solid red;
-  color: white;
   opacity: 1;
 
   & > i {
     color:red;
-
   }
 }
 

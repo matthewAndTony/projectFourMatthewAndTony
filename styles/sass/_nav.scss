@@ -52,6 +52,9 @@ nav ul {
 //   left: 40%;
 // }
 
+//////////////////////////////////////////////////////////////////////////
+//MOBILE NAV FUNCTIONALITY
+//Mobile Nav
 .mobileNav {
   // display:none;
   background: white;
@@ -59,26 +62,47 @@ nav ul {
   position: absolute;
   z-index: 1;
   width: 30%;
+  height:100vh;
   left: -100%;
   transition: 500ms;
 }
+
+//When Checked, Mobile Nav Appears 0 From the Left/ FLESH WITH THE WALL
 input[name="navToggle"]:checked ~ .mobileNav {
   left: 0;
 }
+//WHEN CHECKED< LABEL TURNS BLACK SO WE CAN SEE IT
 input[name="navToggle"]:checked + label[for="navToggle"] {
-  border: 1px solid black;
   i {
-    color: white;
-    @include fontSize(20);
+    color: black;
   }
 }
 
-// mobile menu integration
-// Hide old nav
-.topNav .mainUL {
-  display: none;
-}
-//show hamburger
+//SHOW HAMBURGER / WHERE HAMBURGER IS
 label[for="navToggle"] {
-  display: initial;
+  position:absolute;
+  top:4%;
+  left:5%;
+  z-index:2;
+  display:none; //display:initial; when certain pixel width
+// HAMBURGER ICON STYLING
+  i{
+    color:white;
+    @include fontSize(26);
+  }
 }
+
+.mobileNavUl{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height:100vh;
+  li{
+      padding:2%;
+      a{
+          color:black;
+      }
+  }
+}
+////////////////////////////////////////////////////////////////////////////////

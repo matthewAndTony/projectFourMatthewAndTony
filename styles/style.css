@@ -305,6 +305,80 @@ nav i {
   transition: ease 0.3s;
 }
 
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.logo i {
+  color: white;
+  font-size: 38px;
+  font-size: 3.8rem;
+}
+
+.mobileNav {
+  background: white;
+  opacity: 80%;
+  position: absolute;
+  z-index: 1;
+  width: 30%;
+  height: 100vh;
+  left: -100%;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+input[name="navToggle"]:checked ~ .mobileNav {
+  left: 0;
+}
+
+input[name="navToggle"]:checked + label[for="navToggle"] i {
+  color: black;
+}
+
+label[for="navToggle"] {
+  position: absolute;
+  top: 4%;
+  left: 5%;
+  z-index: 2;
+  display: none;
+}
+
+label[for="navToggle"] i {
+  color: white;
+  font-size: 26px;
+  font-size: 2.6rem;
+}
+
+.mobileNavUl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+}
+
+.mobileNavUl li {
+  padding: 2%;
+}
+
+.mobileNavUl li a {
+  color: black;
+}
+
 input[name],
 .tickerSearchButton {
   padding: 5px 10px;
@@ -416,6 +490,34 @@ footer p {
   font-size: 1rem;
 }
 
+@media (max-width: 1290px) {
+  nav {
+    padding: 2% 0;
+  }
+  nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  nav a {
+    font-weight: 600;
+    font-size: 20px;
+    font-size: 2rem;
+  }
+  nav i {
+    font-size: 15px;
+    font-size: 1.5rem;
+  }
+  .logo i {
+    color: white;
+    font-size: 28px;
+    font-size: 2.8rem;
+  }
+}
+
 input[name]:hover,
 input[name]:focus,
 .tickerSearchButton:hover,
@@ -430,7 +532,6 @@ nav a:hover,
 nav a:focus {
   text-decoration: none;
   border-bottom: 2px solid red;
-  color: white;
   opacity: 1;
 }
 
@@ -446,15 +547,6 @@ nav a:focus > i {
   -webkit-transition: ease 0.3s;
   transition: ease 0.3s;
   border: 1px solid #dddddd;
-}
-
-nav ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
 .articleSection {
