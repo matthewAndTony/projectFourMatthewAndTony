@@ -3,6 +3,8 @@ newsApp.apiKey = `f9648353dfc841bb861714d68d34c9c2`;
 const stockApp = {};
 stockApp.apiKey = `I57N7ZBNDACAALUE`;
 const addedToWatchList = {};
+let ctx = $('#myChart');
+
 // End Point API Search - When the user submits or clicks the submit button, it will the search suggestions back to the user.
 stockApp.searchEndpoint = function (search) {
     $.ajax({
@@ -47,28 +49,20 @@ stockApp.searchStock = function (ticker, timeSeries, stock, currency) {
         const todaysChanges = todaysOpen - todaysClose; //Get Change in Dollars
         const todaysChangesPercent = (todaysOpen - todaysClose) / todaysOpen; //Get Change in Percent
         const todaysVolume = todaysResults['5. volume']; //Get Volume
+
         
-        // chart.js stuff
-        // let ctx = document.getElementById('myChart').getContext('2d');
-        // const monthData = results[`Time Series (Daily)`]
-        // const monthDataArray = [] 
-        // const closePriceArray = []
-        // for (let key in monthData) {
-        //     monthDataArray.push(key)
-        //     closePriceArray.push(monthData[key]["4. close"])
-        // }
-        // console.log(monthDataArray)
-        // console.log(closePriceArray)
-        //     let myChart = new myChart(ctx, {
-        //         type: 'line', //bar, horizontalBar, pie, line, doughnut, radar, polarArea
-        //         data: {
-        //             labels: monthDataArray,//dailyPrice
-        //             datasets: [{
-        //                 data: closePriceArray
-        //             }],//time of day
-        //         },
-        //         // options: {};
-        //     })
+        const monthData = results[`Time Series (Daily)`]
+        const monthDataArray = [] 
+        const closePriceArray = []
+        for (let key in monthData) {
+            monthDataArray.push(key)
+            closePriceArray.push(monthData[key]["4. close"])
+        }
+
+        stockApp.createGraph(monthDataArray,closePriceArray)
+        
+        
+        //////////////////////////////////////////////////
         $('.articleSection').empty()
         addedToWatchList[ticker] = {
             Symbol: ticker,
@@ -160,3 +154,27 @@ $(function () {
     newsApp.init('nasdaq, nyse, tsx');
 })
 
+//Function that creates a graph when given Y Array and X Array
+stockApp.createGraph = function(x, y){
+    // chart.js stuff
+    
+    let myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: x.reverse(),
+            datasets: [{
+                label: 'Closing Price',
+                data: y.reverse(),
+            }],
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    })
+}
