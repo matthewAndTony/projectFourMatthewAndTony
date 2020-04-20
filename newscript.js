@@ -51,12 +51,8 @@ stockApp.searchStock = function (ticker, timeSeries, stock, currency) {
 
         
         const monthData = results[`Time Series (Daily)`]
-        const monthDataArray = [] 
-        const closePriceArray = []
-        for (let key in monthData) {
-            monthDataArray.push(key)
-            closePriceArray.push(monthData[key]["4. close"])
-        }        
+
+
         
         //////////////////////////////////////////////////
         $('.articleSection').empty()
@@ -70,6 +66,14 @@ stockApp.searchStock = function (ticker, timeSeries, stock, currency) {
             ChangePercentage: todaysChangesPercent,
             Volume: todaysVolume
         }
+        //
+        addedToWatchList[ticker][`monthDataArray`] = [] 
+        addedToWatchList[ticker][`closePriceArray`] = []
+        for (let key in monthData) {
+            addedToWatchList[ticker][`monthDataArray`].push(key)
+            addedToWatchList[ticker][`closePriceArray`].push(monthData[key]["4. close"])
+        }       
+        //
         $('.watchList').empty();
         for (let item in addedToWatchList) {
             const currentObject = addedToWatchList[item];
@@ -78,18 +82,18 @@ stockApp.searchStock = function (ticker, timeSeries, stock, currency) {
             if (addedToWatchList[item]!= undefined){
             $('.watchList').append(`<ul class="${item}List stockWatchItem"></ul>`);//Creating Stock UL for Watchlist
             for (let key in currentObject) {
-                if (currentObject[key] != undefined)
+                if (currentObject[key] != undefined && currentObject[key]!= addedToWatchList[item][`monthDataArray`] && currentObject[key]!= addedToWatchList[item][`closePriceArray`] )
                     $(`.${currentObject.Symbol}List`).append(`<li class="${currentObject,key}">${key}:<span> ${currentObject[key]}</span></li>`)
             }
             //////////////
 
             /////////////
-            $(`.${item}List`).append(`<canvas id="myChart" width="400" height="400"></canvas>`);//Creating Graph on DOM
-            stockApp.createGraph(monthDataArray, closePriceArray)//Creating Graph JS /CALLING FUNCTION
+            $(`.${item}List`).append(`<canvas id="${item}Chart" width="200" height="200"></canvas>`);//Creating Graph on DOM
+            stockApp.createGraph(currentObject.monthDataArray, currentObject.closePriceArray, item)//Creating Graph JS /CALLING FUNCTION
             /////////////
 
 
-            $(`.${item}List`).append(`<button class="unsubscribe">Remove from Watchlist</button>`);//Create remove from watchlist button
+            // $(`.${item}List`).append(`<button class="unsubscribe">Remove from Watchlist</button>`);//Create remove from watchlist button
 
             newsApp.init(item);//Gets the news for the watch list items
             }
@@ -162,9 +166,9 @@ $(function () {
 })
 
 //Function that creates a graph when given Y Array and X Array
-stockApp.createGraph = function(x, y){
+stockApp.createGraph = function(x, y, ticker){
     // chart.js stuff
-    let ctx = $('#myChart');
+    let ctx = $(`#${ticker}Chart`);
     
     let myChart = new Chart(ctx, {
         type: 'line',
