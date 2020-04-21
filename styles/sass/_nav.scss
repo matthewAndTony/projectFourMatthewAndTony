@@ -43,10 +43,14 @@
   opacity: 80%;
   position: absolute;
   z-index: 1;
-  width: 50%;
+  width: 60%;
   height: 100vh;
   left: -100%;
+  top:0;
   transition: 500ms;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
 
 //When Checked, Mobile Nav Appears 0 From the Left/ FLESH WITH THE WALL
@@ -71,6 +75,10 @@ label[for="navToggle"] {
   i {
     color: white;
     @include fontSize(26);
+    &:hover,
+    &:focus-within{
+      color:red;
+    }
   }
 }
 
@@ -79,10 +87,11 @@ label[for="navToggle"] {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  width:80%;
   li {
-    padding: 2%;
-    a {
+    padding: 5% 0;
+    a i,
+    a{
       color: black;
     }
   }
