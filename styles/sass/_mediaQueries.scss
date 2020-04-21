@@ -92,8 +92,12 @@
 //  media queries - 600px
 
 @media (max-width: 600px) {
+
+  .articleSection {
+    flex-direction: column;
+  }
   .articleSection a {
-    min-width: 90%;
+    min-width: 100%;
   }
 }
 

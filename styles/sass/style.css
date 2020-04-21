@@ -669,8 +669,14 @@ footer p {
 }
 
 @media (max-width: 600px) {
+  .articleSection {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
   .articleSection a {
-    min-width: 90%;
+    min-width: 100%;
   }
 }
 
