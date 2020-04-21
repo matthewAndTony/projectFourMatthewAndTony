@@ -83,6 +83,9 @@
   .topNav i {
     @include fontSize(20);
   }
+  .articleSection a {
+    min-width: 48.5%;
+  }
 }
 
 //  media queries - 780px
@@ -90,9 +93,12 @@
 @media (max-width: 780px) {
 }
 
-//  media queries - 560px
+//  media queries - 600px
 
-@media (max-width: 560px) {
+@media (max-width: 600px) {
+  .articleSection a {
+    min-width: 90%;
+  }
 }
 
 // media queries - 380px
