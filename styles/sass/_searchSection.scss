@@ -1,0 +1,60 @@
+
+input[name],
+.tickerSearchButton {
+  padding: 5px 10px;
+  border: none;
+  background: none;
+  outline: none;
+  transition: all 0.3s;
+  border: 1px solid #dddddd;
+  margin: 10px 0 0 0;
+}
+input[name]{
+  width:90%;
+}
+
+.tickerSearchButton{
+  width:10%;
+}
+
+.tickerSearchResults,
+.watchList {
+  flex: 1 0 100%;
+}
+
+
+.searchResults {
+  padding:1%;
+  font-size: 2rem;
+  width: calc(100% - 10px);
+  border:1px solid transparent;
+}
+.tickerSearchSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border:1px solid #dddddd;
+  padding: 1%;
+  margin-top:1%;
+}
+.resultTicker {
+  font-weight: 600;
+  font-size: 2rem;
+}
+.resultName {
+  font-size: 1.75rem;
+}
+.resultRegion {
+  font-size: 1.5rem;
+}
+
+.resultCurrency {
+  font-size: 1.25rem;
+}
+
+
+span {
+  font-weight: 600;
+  font-size: 1.75rem;
+}
+

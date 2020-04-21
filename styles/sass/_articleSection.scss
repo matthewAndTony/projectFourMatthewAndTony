@@ -13,8 +13,6 @@
   border: 1px solid #dddddd;
 }
 
-// placeholder image to see the style - need to apply default articles upon arrival to the page
-// when search for ticker and the articles load after selecting the company you were searching for - flex box does not apply and the articles are all different sizes need to control look an feel
 article {
   padding: 2% 4%;
   box-shadow: 2px 2px 2px 1px rgba(245, 165, 165, 0.1);
@@ -41,8 +39,23 @@ article {
   height: 100%;
 }
 
-.stockWatchItem{
-  display:flex;
-  flex-direction:column;
+.articleTitle {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+  padding-bottom: 10px;
 }
 
+.articleAuthor {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  padding-bottom: 10px;
+}
+
+.articleContent {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 1.25rem;
+  padding-right: 10px;
+}
