@@ -9,6 +9,7 @@
   color: #000;
   width: 32%;
   margin-bottom: 5%;
+  transition: ease 0.3s;
   border: 1px solid #dddddd;
 }
 
@@ -39,3 +40,9 @@ article {
 .articleImage img {
   height: 100%;
 }
+
+.stockWatchItem{
+  display:flex;
+  flex-direction:column;
+}
+

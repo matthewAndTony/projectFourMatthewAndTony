@@ -593,6 +593,15 @@ footer p {
     font-size: 20px;
     font-size: 2rem;
   }
+  .articleSection a {
+    min-width: 48.5%;
+  }
+}
+
+@media (max-width: 600px) {
+  .articleSection a {
+    min-width: 90%;
+  }
 }
 
 input[name]:hover,
@@ -626,6 +635,12 @@ nav a:focus > i {
   border: 1px solid #dddddd;
 }
 
+.articleSection a:hover,
+.articleSection a:focus {
+  color: red;
+  opacity: .75;
+}
+
 .articleSection {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -643,6 +658,8 @@ nav a:focus > i {
   color: #000;
   width: 32%;
   margin-bottom: 5%;
+  -webkit-transition: ease 0.3s;
+  transition: ease 0.3s;
   border: 1px solid #dddddd;
 }
 
@@ -685,4 +702,14 @@ article {
 
 .articleImage img {
   height: 100%;
+}
+
+.stockWatchItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
