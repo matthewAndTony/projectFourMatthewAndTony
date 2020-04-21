@@ -279,13 +279,15 @@ img {
      object-position: center;
 }
 
-nav {
+.bottomNav,
+.topNav {
   background-color: black;
   padding: 2% 0;
   border-bottom: 1px solid #d3d3d3;
 }
 
-nav a {
+.bottomNav a span,
+.topNav a span {
   text-decoration: none;
   color: white;
   font-family: "Montserrat", sans-serif;
@@ -298,14 +300,17 @@ nav a {
   border-bottom: 2px solid transparent;
 }
 
-nav i {
+.bottomNav i,
+.topNav i {
   font-size: 18px;
   font-size: 1.8rem;
   -webkit-transition: ease 0.3s;
   transition: ease 0.3s;
+  color: white;
 }
 
-nav ul {
+.bottomNav ul,
+.topNav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -342,8 +347,8 @@ input[name="navToggle"]:checked + label[for="navToggle"] i {
 
 label[for="navToggle"] {
   position: absolute;
-  top: 4%;
-  left: 5%;
+  top: 2%;
+  left: 1%;
   z-index: 2;
   display: none;
 }
@@ -377,6 +382,14 @@ label[for="navToggle"] i {
 
 .mobileNavUl li a {
   color: black;
+}
+
+.bottomNav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+  display: none;
 }
 
 input[name],
@@ -490,11 +503,32 @@ footer p {
   font-size: 1rem;
 }
 
+@media (max-width: 1340px) {
+  .bottomNav a span,
+  .topNav a span {
+    font-weight: 600;
+    font-size: 19px;
+    font-size: 1.9rem;
+  }
+  .bottomNav i,
+  .topNav i {
+    font-size: 14px;
+    font-size: 1.4rem;
+  }
+  .logo i {
+    color: white;
+    font-size: 28px;
+    font-size: 2.8rem;
+  }
+}
+
 @media (max-width: 1290px) {
-  nav {
+  .bottomNav,
+  .topNav {
     padding: 2% 0;
   }
-  nav ul {
+  .bottomNav ul,
+  .topNav ul {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -502,19 +536,55 @@ footer p {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  nav a {
+  .bottomNav a span,
+  .topNav a span {
     font-weight: 600;
-    font-size: 20px;
-    font-size: 2rem;
+    font-size: 16px;
+    font-size: 1.6rem;
   }
-  nav i {
-    font-size: 15px;
-    font-size: 1.5rem;
+  .bottomNav i,
+  .topNav i {
+    font-size: 12px;
+    font-size: 1.2rem;
   }
   .logo i {
     color: white;
-    font-size: 28px;
-    font-size: 2.8rem;
+    font-size: 25px;
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 1140px) {
+  html {
+    font-size: 60%;
+  }
+}
+
+@media (max-width: 970px) {
+  .bottomNav a span,
+  .topNav a,
+  .logo {
+    display: none;
+  }
+  .topNav ul {
+    height: 25px;
+  }
+  label[for="navToggle"] {
+    display: initial;
+  }
+  .bottomNav {
+    display: initial;
+  }
+  .bottomNav i,
+  .topNav i {
+    font-size: 20px;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 780px) {
+  .topNav ul {
+    height: 40px;
   }
 }
 

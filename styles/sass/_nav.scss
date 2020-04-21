@@ -63,7 +63,7 @@ input[name="navToggle"]:checked + label[for="navToggle"] {
 //SHOW HAMBURGER / WHERE HAMBURGER IS
 label[for="navToggle"] {
   position: absolute;
-  top: 20px;
+  top: 2%;
   left: 1%;
   z-index: 2;
   display: none; //display:initial; when certain pixel width
@@ -94,4 +94,6 @@ label[for="navToggle"] {
   position: fixed;
   bottom: 0;
   width: 100%;
+  z-index: 1;
+  display:none;//ENABLE AT MOBILE VIEW
 }

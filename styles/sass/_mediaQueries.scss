@@ -65,12 +65,20 @@
 
 @media (max-width: 970px) {
   .bottomNav a span,
-  .topNav a span {
+  .topNav a,
+  .logo{
     display: none;
+  }
+  .topNav ul{
+    height:25px;
   }
 
   label[for="navToggle"] {
     display: initial;
+  }
+
+  .bottomNav{
+    display:initial
   }
 
   .bottomNav i,
@@ -82,6 +90,9 @@
 //  media queries - 780px
 
 @media (max-width: 780px) {
+  .topNav ul{
+    height:40px;
+  }
 }
 
 //  media queries - 560px
