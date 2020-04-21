@@ -36,3 +36,12 @@ nav a:focus{
   transition: ease 0.3s;
   border:1px solid #dddddd;
 }
+
+
+
+ .articleSection a:hover,
+ .articleSection a:focus {
+  transition: ease 0.3s;
+  color: red;
+  opacity: .5;
+}
