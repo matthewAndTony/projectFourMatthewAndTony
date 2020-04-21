@@ -1,12 +1,12 @@
 // Nav Settings
 
-nav {
+.topNav {
   background-color: black;
   padding: 2% 0;
   border-bottom: 1px solid #d3d3d3;
 }
 
-nav a {
+.topNav a span {
   text-decoration: none;
   color: white;
   font-family: "Montserrat", sans-serif;
@@ -17,40 +17,21 @@ nav a {
   border-bottom: 2px solid transparent;
 }
 
-nav i {
+.topNav i {
   @include fontSize(18);
   transition: ease 0.3s;
+  color: white;
 }
 
-nav ul {
+.topNav ul {
   display: flex;
   justify-content: space-between;
 }
 
-// .logo {
-//   position: relative;
-//   border: 1px solid white;
-// }
 .logo i {
   color: white;
   @include fontSize(38);
 }
-
-// .logo span {
-//   position: absolute;
-//   color: red;
-//   @include fontSize(30);
-//   left: 25%;
-//   font-family: "Montserrat", sans-serif;
-// }
-
-// .logo .tony {
-//   color: white;
-//   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-//     1px 1px 0 #000;
-//   @include fontSize(30);
-//   left: 40%;
-// }
 
 //////////////////////////////////////////////////////////////////////////
 //MOBILE NAV FUNCTIONALITY
@@ -62,7 +43,7 @@ nav ul {
   position: absolute;
   z-index: 1;
   width: 30%;
-  height:100vh;
+  height: 100vh;
   left: -100%;
   transition: 500ms;
 }
@@ -80,29 +61,29 @@ input[name="navToggle"]:checked + label[for="navToggle"] {
 
 //SHOW HAMBURGER / WHERE HAMBURGER IS
 label[for="navToggle"] {
-  position:absolute;
-  top:4%;
-  left:5%;
-  z-index:2;
-  display:none; //display:initial; when certain pixel width
-// HAMBURGER ICON STYLING
-  i{
-    color:white;
+  position: absolute;
+  top: 20px;
+  left: 1%;
+  z-index: 2;
+  display: none; //display:initial; when certain pixel width
+  // HAMBURGER ICON STYLING
+  i {
+    color: white;
     @include fontSize(26);
   }
 }
 
-.mobileNavUl{
-  display:flex;
+.mobileNavUl {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height:100vh;
-  li{
-      padding:2%;
-      a{
-          color:black;
-      }
+  height: 100vh;
+  li {
+    padding: 2%;
+    a {
+      color: black;
+    }
   }
 }
 ////////////////////////////////////////////////////////////////////////////////

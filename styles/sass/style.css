@@ -279,13 +279,13 @@ img {
      object-position: center;
 }
 
-nav {
+.topNav {
   background-color: black;
   padding: 2% 0;
   border-bottom: 1px solid #d3d3d3;
 }
 
-nav a {
+.topNav a span {
   text-decoration: none;
   color: white;
   font-family: "Montserrat", sans-serif;
@@ -298,14 +298,15 @@ nav a {
   border-bottom: 2px solid transparent;
 }
 
-nav i {
+.topNav i {
   font-size: 18px;
   font-size: 1.8rem;
   -webkit-transition: ease 0.3s;
   transition: ease 0.3s;
+  color: white;
 }
 
-nav ul {
+.topNav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -326,6 +327,7 @@ nav ul {
   position: absolute;
   z-index: 1;
   width: 30%;
+  height: 100vh;
   left: -100%;
   -webkit-transition: 500ms;
   transition: 500ms;
@@ -335,22 +337,47 @@ input[name="navToggle"]:checked ~ .mobileNav {
   left: 0;
 }
 
-input[name="navToggle"]:checked + label[for="navToggle"] {
-  border: 1px solid black;
-}
-
 input[name="navToggle"]:checked + label[for="navToggle"] i {
-  color: white;
-  font-size: 20px;
-  font-size: 2rem;
-}
-
-.topNav .mainUL {
-  display: none;
+  color: black;
 }
 
 label[for="navToggle"] {
-  display: initial;
+  position: absolute;
+  top: 20px;
+  left: 1%;
+  z-index: 2;
+  display: none;
+}
+
+label[for="navToggle"] i {
+  color: white;
+  font-size: 26px;
+  font-size: 2.6rem;
+}
+
+.mobileNavUl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+}
+
+.mobileNavUl li {
+  padding: 2%;
+}
+
+.mobileNavUl li a {
+  color: black;
 }
 
 input[name],
@@ -464,11 +491,28 @@ footer p {
   font-size: 1rem;
 }
 
+@media (max-width: 1340px) {
+  .topNav a span {
+    font-weight: 600;
+    font-size: 19px;
+    font-size: 1.9rem;
+  }
+  .topNav i {
+    font-size: 14px;
+    font-size: 1.4rem;
+  }
+  .logo i {
+    color: white;
+    font-size: 28px;
+    font-size: 2.8rem;
+  }
+}
+
 @media (max-width: 1290px) {
-  nav {
+  .topNav {
     padding: 2% 0;
   }
-  nav ul {
+  .topNav ul {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -476,19 +520,38 @@ footer p {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  nav a {
+  .topNav a span {
     font-weight: 600;
-    font-size: 20px;
-    font-size: 2rem;
+    font-size: 16px;
+    font-size: 1.6rem;
   }
-  nav i {
-    font-size: 15px;
-    font-size: 1.5rem;
+  .topNav i {
+    font-size: 12px;
+    font-size: 1.2rem;
   }
   .logo i {
     color: white;
-    font-size: 28px;
-    font-size: 2.8rem;
+    font-size: 25px;
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 1140px) {
+  html {
+    font-size: 60%;
+  }
+}
+
+@media (max-width: 970px) {
+  .topNav a span {
+    display: none;
+  }
+  label[for="navToggle"] {
+    display: initial;
+  }
+  .topNav i {
+    font-size: 20px;
+    font-size: 2rem;
   }
 }
 
@@ -506,7 +569,6 @@ nav a:hover,
 nav a:focus {
   text-decoration: none;
   border-bottom: 2px solid red;
-  color: white;
   opacity: 1;
 }
 
