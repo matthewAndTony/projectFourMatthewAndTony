@@ -65,16 +65,14 @@
 
 @media (max-width: 970px) {
   .bottomNav a span,
-  .topNav a,
+  .mainNavLI,
   .logo{
     display: none;
-  }
-  .topNav ul{
-    height:25px;
   }
 
   label[for="navToggle"] {
     display: initial;
+    position:relative;
   }
 
   .bottomNav{
@@ -90,9 +88,6 @@
 //  media queries - 780px
 
 @media (max-width: 780px) {
-  .topNav ul{
-    height:40px;
-  }
 }
 
 //  media queries - 560px
