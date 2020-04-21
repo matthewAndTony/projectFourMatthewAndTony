@@ -1,11 +1,12 @@
 // Nav Settings
-
+.bottomNav,
 .topNav {
   background-color: black;
   padding: 2% 0;
   border-bottom: 1px solid #d3d3d3;
 }
 
+.bottomNav a span,
 .topNav a span {
   text-decoration: none;
   color: white;
@@ -16,13 +17,13 @@
   transition: ease 0.3s;
   border-bottom: 2px solid transparent;
 }
-
+.bottomNav i,
 .topNav i {
   @include fontSize(18);
   transition: ease 0.3s;
   color: white;
 }
-
+.bottomNav ul,
 .topNav ul {
   display: flex;
   justify-content: space-between;
@@ -87,3 +88,10 @@ label[for="navToggle"] {
   }
 }
 ////////////////////////////////////////////////////////////////////////////////
+// bottom mobile nav
+
+.bottomNav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

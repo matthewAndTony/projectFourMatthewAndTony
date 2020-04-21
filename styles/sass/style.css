@@ -279,12 +279,14 @@ img {
      object-position: center;
 }
 
+.bottomNav,
 .topNav {
   background-color: black;
   padding: 2% 0;
   border-bottom: 1px solid #d3d3d3;
 }
 
+.bottomNav a span,
 .topNav a span {
   text-decoration: none;
   color: white;
@@ -298,6 +300,7 @@ img {
   border-bottom: 2px solid transparent;
 }
 
+.bottomNav i,
 .topNav i {
   font-size: 18px;
   font-size: 1.8rem;
@@ -306,6 +309,7 @@ img {
   color: white;
 }
 
+.bottomNav ul,
 .topNav ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -378,6 +382,12 @@ label[for="navToggle"] i {
 
 .mobileNavUl li a {
   color: black;
+}
+
+.bottomNav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 input[name],
@@ -492,11 +502,13 @@ footer p {
 }
 
 @media (max-width: 1340px) {
+  .bottomNav a span,
   .topNav a span {
     font-weight: 600;
     font-size: 19px;
     font-size: 1.9rem;
   }
+  .bottomNav i,
   .topNav i {
     font-size: 14px;
     font-size: 1.4rem;
@@ -509,9 +521,11 @@ footer p {
 }
 
 @media (max-width: 1290px) {
+  .bottomNav,
   .topNav {
     padding: 2% 0;
   }
+  .bottomNav ul,
   .topNav ul {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -520,11 +534,13 @@ footer p {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
+  .bottomNav a span,
   .topNav a span {
     font-weight: 600;
     font-size: 16px;
     font-size: 1.6rem;
   }
+  .bottomNav i,
   .topNav i {
     font-size: 12px;
     font-size: 1.2rem;
@@ -543,12 +559,14 @@ footer p {
 }
 
 @media (max-width: 970px) {
+  .bottomNav a span,
   .topNav a span {
     display: none;
   }
   label[for="navToggle"] {
     display: initial;
   }
+  .bottomNav i,
   .topNav i {
     font-size: 20px;
     font-size: 2rem;
