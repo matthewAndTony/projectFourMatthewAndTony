@@ -90,7 +90,7 @@ stockApp.searchStock = function (ticker, timeSeries, stock, currency) {
             /////////////
             $(`.${item}List`).append(`<canvas id="${item}Chart"></canvas>`);//Creating Graph on DOM
             stockApp.createGraph(currentObject.monthDataArray, currentObject.closePriceArray, item)//Creating Graph JS /CALLING FUNCTION
-            $('.chartjs-render-monitor').css({'height':'500px'})
+            // $('.chartjs-render-monitor').css({'height':'450px'})
             /////////////
 
 
@@ -193,3 +193,21 @@ stockApp.createGraph = function(x, y, ticker){
         }
     })
 }
+
+const zomatoApp = () =>{
+    $.ajax({
+        url: `https://developers.zomato.com/api/v2.1/cities`,
+            method: `GET`,
+            dataType: `json`,
+            headers: {
+                'user-key': 'e1c57bc8ae7f5d59b2ebbf9ea65a84f6',
+            },
+            data:{
+                q: 'toronto'
+            }
+    }).then((results)=>{
+        console.log(results)
+    })
+}
+
+zomatoApp();
