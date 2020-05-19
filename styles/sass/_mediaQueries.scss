@@ -1,0 +1,104 @@
+// media queries - 1340px
+
+@media (max-width: 1340px) {
+  .bottomNav a span,
+  .topNav a span {
+    font-weight: 600;
+    @include fontSize(19);
+    // padding: 0 2%;
+  }
+  .bottomNav i,
+  .topNav i {
+    @include fontSize(14);
+  }
+
+  .logo i {
+    color: white;
+    @include fontSize(28);
+  }
+}
+
+//  media queries - 1274px
+@media (max-width: 1290px) {
+  .bottomNav,
+  .topNav {
+    padding: 2% 0;
+  }
+
+  .bottomNav ul,
+  .topNav ul {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .bottomNav a span,
+  .topNav a span {
+    font-weight: 600;
+    @include fontSize(16);
+    // padding: 0 2%;
+  }
+  .bottomNav i,
+  .topNav i {
+    @include fontSize(12);
+  }
+
+  .logo i {
+    color: white;
+    @include fontSize(25);
+  }
+}
+
+//  media queries - 1230px
+
+@media (max-width: 1230px) {
+}
+
+//  media queries - 1140px
+
+@media (max-width: 1140px) {
+  html {
+    font-size: 60%;
+  }
+}
+
+//  media queries - 970px
+
+@media (max-width: 970px) {
+  .bottomNav a span,
+  .mainNavLI,
+  .logo{
+    display: none;
+  }
+
+  label[for="navToggle"] {
+    display: initial;
+    position:relative;
+  }
+
+  .bottomNav{
+    display:initial
+  }
+
+  .bottomNav i,
+  .topNav i {
+    @include fontSize(20);
+  }
+  .articleSection a {
+    min-width: 48.5%;
+  }
+}
+
+
+//  media queries - 600px
+
+@media (max-width: 600px) {
+
+  .articleSection {
+    flex-direction: column;
+  }
+  .articleSection a {
+    min-width: 100%;
+  }
+}
+
+

@@ -466,7 +466,7 @@ article {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-          overflow:hidden;
+  overflow: hidden;
 }
 
 .articleContentContainer {
@@ -517,9 +517,6 @@ article {
 input[name],
 .tickerSearchButton {
   padding: 5px 10px;
-  border: none;
-  background: none;
-  outline: none;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   border: 1px solid #dddddd;
@@ -527,7 +524,7 @@ input[name],
 }
 
 input[name] {
-  width: 90%;
+  width: 85%;
 }
 
 .tickerSearchButton {
