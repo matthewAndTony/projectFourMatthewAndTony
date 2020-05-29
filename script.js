@@ -105,27 +105,17 @@ stockApp.searchStock = function (ticker, timeSeries, stock, currency) {
 //Access Stock News API - 
 newsApp.init = function (query) {
     $.ajax({
+        url: `http://proxy.hackeryou.com`,
+        dataType: `json`,
         method: `GET`,
-        url: 'https://proxy.hackeryou.com',
-        responseType:'json',
-        paramsSerializer: function(params) {
-        return Qs.stringify(params, {arrayFormat: 'brackets'})
-        },
-        params: {
+        data: {
             reqUrl: `https://newsapi.org/v2/everything`,
-            params: {
-                queryParam: 'value'
-            },
-            proxyHeaders: {
-                'header_params': 'value'
-            },
-            data: {
+            params: {  
                 apiKey: newsApp.apiKey,
                 q: query,
                 sortBy: 'relevancy',
                 pageSize: 6,
-            },
-            xmlToJSON: false
+            }
         }
     }).then(function (results) {
         results.articles.forEach(function (item) {
