@@ -1,128 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/1a100a9ca4.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/sass/style.css" />
+    <title>MTX Stock Tracker</title>
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./favicon/apple-touch-icon.png.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon/favicon-32x32.png"
+    />
+    <link rel="manifest" href="./favicon/site.webmanifest" />
+    <!-- Favicon -->
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://kit.fontawesome.com/1a100a9ca4.js" crossorigin="anonymous"></script>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@800&display=swap"
-    rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./styles/style.css" />
-  <title>MTX Stock Tracker</title>
-  <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
-  <link rel="manifest" href="./favicon/site.webmanifest">
-  <!-- Favicon -->
-</head>
-
-<body>
-  <nav class="topNav">
-    <!--Top Nav Bar-->
-    <ul class="bleed">
-      <!--Hamburger Input-->
-      <input type="checkbox" name="navToggle" id="navToggle" class="visually-hidden" />
-      <label for="navToggle"><i class="fas fa-bars"></i></label>
-      <!--for visually impaired-->
-      <!-- Hamburger Menu Icon/ THE ONE THAT SLIDES IN-->
-      <nav class="mobileNav">
-        <ul class="mobileNavUl">
-          <!-- Mobile Nav-->
-          <div class="logo">
-            <i class="fas fa-globe-europe"></i>
-          </div>
-          <li>
-            <a href="#"><i class="fas fa-home"></i> Home</a>
-          </li>
-          <li>
-            <a href="#"><i class="fas fa-binoculars"></i> Watchlist</a>
-          </li>
-          <li>
-            <a href="#"><i class="fas fa-chart-line"></i> Market Trends</a>
-          </li>
-          <li>
-            <a href="#"><i class="fas fa-truck-moving"></i> Biggest Movers</a>
-          </li>
-          <li>
-            <a href="#"><i class="fab fa-bitcoin"></i> Crypto</a>
-          </li>
-          <li>
-            <a href="#"><i class="fas fa-coins"></i> ForEX</a>
-          </li>
-        </ul>
-      </nav>
-      <!---->
-      <div class="logo">
-        <i class="fas fa-globe-europe"></i>
-      </div>
-      <li class="mainNavLI">
-        <a href="#"><i class="fas fa-home"></i><span> Home</span></a>
-      </li>
-      <li class="mainNavLI">
-        <a href="#"><i class="fas fa-binoculars"></i> <span>Watchlist</span></a>
-      </li>
-      <li class="mainNavLI">
-        <a href="#"><i class="fas fa-chart-line"></i><span> Market Trends</span></a>
-      </li>
-      <li class="mainNavLI">
-        <a href="#"><i class="fas fa-truck-moving"></i> <span>Biggest Movers</span></a>
-      </li>
-      <li class="mainNavLI">
-        <a href="#"><i class="fab fa-bitcoin"></i> <span>Crypto</span></a>
-      </li>
-      <li class="mainNavLI">
-        <a href="#"><i class="fas fa-coins"></i> <span>ForEX</span></a>
-      </li>
-    </ul>
-  </nav>
-  <!-- bottom mobile icon nav -->
-  <nav class="bottomNav">
-    <ul class="bleed">
-      <div class="logo">
-        <i class="fas fa-globe-europe"></i>
-      </div>
-      <li>
-        <a href="#"><i class="fas fa-home"></i></a>
-      </li>
-      <li>
-        <a href="#"><i class="fas fa-binoculars"></i></a>
-      </li>
-      <li>
-        <a href="#"><i class="fas fa-chart-line"></i></a>
-      </li>
-      <li>
-        <a href="#"><i class="fas fa-truck-moving"></i></a>
-      </li>
-      <li>
-        <a href="#"><i class="fab fa-bitcoin"></i></a>
-      </li>
-      <li>
-        <a href="#"><i class="fas fa-coins"></i></a>
-      </li>
-    </ul>
-  </nav>
-  <!-- Ticker Search Bar-->
-  <section class="tickerSearchSection bleed">
-    <input type="text" name="tickerSearchInput" id="searchTickerInput" placeholder="Search Stock Here" />
-    <button class="tickerSearchButton">
-      <i class="fas fa-search"></i>
-    </button>
-    <ul class="tickerSearchResults"></ul>
-    <ul class="watchList"></ul>
-  </section>
-  <!--  -->
-  <!-- Articles Section -->
-  <section class="articleSection bleed"></section>
-  <footer>
-    <p>mtx &copy2020</p>
-  </footer>
-  <script src="https://code.jquery.com/jquery-3.4.0.min.js"
-    integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"
-    integrity="sha256-nZaxPHA2uAaquixjSDX19TmIlbRNCOrf5HO1oHl5p70=" crossorigin="anonymous"></script>
-  <script src="./script.js"></script>
-</body>
-
+  <body>
+    <nav class="topNav">
+      <!--Top Nav Bar-->
+      <ul class="bleed">
+        <!--Hamburger Input-->
+        <input
+          type="checkbox"
+          name="navToggle"
+          id="navToggle"
+          class="visually-hidden"
+        />
+        <label for="navToggle"><i class="fas fa-bars"></i></label>
+        <!--for visually impaired-->
+        <!-- Hamburger Menu Icon/ THE ONE THAT SLIDES IN-->
+        <nav class="mobileNav">
+          <ul class="mobileNavUl">
+            <!-- Mobile Nav-->
+            <div class="logo">
+              <i class="fas fa-globe-europe"></i>
+            </div>
+            <li>
+              <a href="#"><i class="fas fa-home"></i> Home</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-binoculars"></i> Watchlist</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-chart-line"></i> Market Trends</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-truck-moving"></i> Biggest Movers</a>
+            </li>
+            <li>
+              <a href="#"><i class="fab fa-bitcoin"></i> Crypto</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-coins"></i> ForEX</a>
+            </li>
+          </ul>
+        </nav>
+        <!---->
+        <div class="logo">
+          <i class="fas fa-globe-europe"></i>
+        </div>
+        <li class="mainNavLI">
+          <a href="#"><i class="fas fa-home"></i><span> Home</span></a>
+        </li>
+        <li class="mainNavLI">
+          <a href="#"
+            ><i class="fas fa-binoculars"></i> <span>Watchlist</span></a
+          >
+        </li>
+        <li class="mainNavLI">
+          <a href="#"
+            ><i class="fas fa-chart-line"></i><span> Market Trends</span></a
+          >
+        </li>
+        <li class="mainNavLI">
+          <a href="#"
+            ><i class="fas fa-truck-moving"></i> <span>Biggest Movers</span></a
+          >
+        </li>
+        <li class="mainNavLI">
+          <a href="#"><i class="fab fa-bitcoin"></i> <span>Crypto</span></a>
+        </li>
+        <li class="mainNavLI">
+          <a href="#"><i class="fas fa-coins"></i> <span>ForEX</span></a>
+        </li>
+      </ul>
+    </nav>
+    <!-- bottom mobile icon nav -->
+    <nav class="bottomNav">
+      <ul class="bleed">
+        <div class="logo">
+          <i class="fas fa-globe-europe"></i>
+        </div>
+        <li>
+          <a href="#"><i class="fas fa-home"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-binoculars"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-chart-line"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-truck-moving"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fab fa-bitcoin"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-coins"></i></a>
+        </li>
+      </ul>
+    </nav>
+    <!-- Ticker Search Bar-->
+    <section class="tickerSearchSection bleed">
+      <input
+        type="text"
+        name="tickerSearchInput"
+        id="searchTickerInput"
+        placeholder="Search Stock Here"
+      />
+      <button class="tickerSearchButton">
+        <i class="fas fa-search"></i>
+      </button>
+      <ul class="tickerSearchResults"></ul>
+      <ul class="watchList"></ul>
+    </section>
+    <!--  -->
+    <!-- Articles Section -->
+    <section class="articleSection bleed"></section>
+    <footer>
+      <p>mtx &copy2020</p>
+    </footer>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"
+      integrity="sha256-nZaxPHA2uAaquixjSDX19TmIlbRNCOrf5HO1oHl5p70="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.0.min.js"
+      integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
 </html>
